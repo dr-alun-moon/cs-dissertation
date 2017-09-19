@@ -1,0 +1,40 @@
+\begin{ganttchart}[
+time slot format=little-endian,
+calendar week text=\currentweek,
+x unit=2.4pt,
+y unit chart=14pt,
+y unit title=12pt,
+title label font=\scriptsize,
+bar height=0.7,
+group label font = {\tiny\bfseries},
+group inline label node/.append style=centered,
+hgrid=true,vgrid={*6{draw=none},dotted},
+region/.style={inline,group peaks width=2,
+  group peaks height=0.25, group height=0.5,
+  group top shift=0.2 ,group/.append style={fill=#1}},
+milestone left shift=0,
+milestone right shift=1,
+ms/.style={inline,
+    milestone inline label node/.append style={#1=0pt}}
+]{11/9/17}{18/05/18}
+
+\gantttitlecalendar{year,month,week=1}\\
+\ganttgroup[region=blue!10]{Sem 1}{11/9/17}{8/12/17}
+\ganttgroup[region=red!50]{Christmas}{11/12/17}{1/1/18}
+\ganttgroup[region=blue!50]{Sem 2}{15/1/18}{23/3/18}
+\ganttgroup[region=green!25]{Easter}{26/3/18}{13/4/18}
+\ganttgroup[region=blue!50]{Sem 2}{16/04/18}{27/04/18}\\
+
+\ganttmilestone[]{TOR}{13/10/17}
+\ganttmilestone[ms=left]{\bfseries TOR}{10/11/17}
+\ganttmilestone[ms=right]{Draft Analysis}{24/11/17}
+\ganttmilestone[ms=left]{Submit}{19/4/18}
+\ganttnewline[thick]
+
+% --Tasks go here
+\ganttbar{TOR}{11/9/17}{13/10/17}
+\ganttbar[inline]{\emph{revise}}{15/10/17}{10/11/17}\\
+\ganttbar{Analysis}{18/9/17}{24/11/17}\\
+\ganttbar{Design}{31/10/17}{17/1/18}\\
+\ganttbar{Exploration}{22/9/17}{15/11/17}
+\end{ganttchart}
