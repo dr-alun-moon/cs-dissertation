@@ -1,4 +1,5 @@
 %!TeX root=TermsOfReference.tex
+
 \section{Background}
 This document demonstates the structure of a proposed Terms of Reference document written in \LaTeX.
 
@@ -7,7 +8,10 @@ This should describe the ``context'' of the proposed project and answer the ques
 \LaTeX\ and its companion \BibTeX\ are a good pair of tools for writing your documentation.
 
 Don't forget to reference background material.  \BibTeX\ makes this simple.
-You can have one or more \path{.bib} files, these are  easy to populate from academic search tools, such as Google-scholar, and the Library's search facilities.  A bibliography file looks something like figure \ref{bibtex-sample}
+You can have one or more \path{.bib} files, these are  easy to populate from academic search tools, such as Google-scholar, and the Library's search facilities.  A bibliography file looks something like figure \ref{bibtex-sample}.  In the text use the label in a citation command
+	\mintinline{tex}{\citep{k+r}} the toolset puts the right form of citation
+	\citep[pages 2--4]{k+r} into the text.
+
 
 \begin{figure}
 \begin{tcolorbox}{}
@@ -25,27 +29,93 @@ You can have one or more \path{.bib} files, these are  easy to populate from aca
 \label{bibtex-sample}
 \end{figure}
 
+Where you want the bibliography to go use the \mintinline{tex}{\bibliography{c,unix}} command, with a comma separated list of \path{.bib} files (without the extension).
+
 \section{Proposed Work}
+\label{proposed}
 .  The project must exhibit a level of difficulty appropriate to final year honours BSc work, and be of a size that can be attempted in the time available; this section should define the topic and project work in enough detail for the markers to be sure that it is suitable. The more detail and discussion you produce at this stage, the stronger the foundation for the actual project work.
 
-You should emphasise the computing aspects you expect to be involved in, including those specifically relevant to your programme.  Remember that you are undertaking the project as part of a BSc programme in a computing-related discipline, and avoid being side-tracked into areas that are not relevant to your course.) 
+You should emphasise the computing aspects you expect to be involved in, including those specifically relevant to your programme.  Remember that you are undertaking the project as part of a BSc programme in a computing-related discipline, and avoid being side-tracked into areas that are not relevant to your course.)
 
 \section{Aims and Objectives}
+There should only be one or two aims
 \subsection{Aims}
+\begin{quote}
+	To show how \LaTeX\ and tools can be used to write a dissertation
+\end{quote}
+
 \subsection{Objectives}
+Your objective list is a series of measurable objectives, can you tick each one off as \emph{done}?  I usually expect between 8 and 12 objectives
+
+The \textbf{enumerate} environment is useful here for generating a numbered list.   You can put \mintinline{tex}{\label} commands in with a keyword \mintinline{tex}{\label{understand-problem}} and then refer to the label with a \mintinline{tex}{\ref{understand-problem}} command, it puts the number of the objective in the text
+\begin{tcblisting}{}
+	See objective \ref{understand-problem}
+\end{tcblisting}
+\begin{enumerate}
+	\item \textbf{Classify the problem domain}\label{understand-problem}  this is where you develop an understanding of the nature of the problem/project
+	\item \textbf{Identify Techniques to solve}  What Algorithms are you to use, how is a database structured,
+	\item \textbf{Select tools to use}  What languages, software, hardware; are you using?
+	\item \textbf{Design the system to be build}\label{write-code}  Its requirements, the \textbf{test plan}, the architecture (Layer model/Model-View-Controller)
+	\item \textbf{Build the system}  I'd include testing here, as the result is a \emph{working wywtem}
+\end{enumerate}
+
 \section{Skills}
+This is where you can cover the skills you have relevant to the project and the new skills you are going to acquire during the project.
+\begin{enumerate}
+	\item Programming in C, see module KFxxx
+	\item Hardware Design
+\end{enumerate}
+
 \section{Resources}
+This is an important section, it lists the hardware and software you are going to need for the project.
+
 \subsection{Hardware}
+For Hardware this is more critical, as we need to identify any hardware we have, or that you are going to buy.  We do have an ordering mechanism in the Department, but time and budget are critical constraints here.
+
 \subsection{Software}
+In the case of software, there isn't usually an issue, unless you're needing huge amounts of run-time (we don't have a super-computer handy).
 
 \section{Structure and Contents of the Report}
+Here you set out the likely chapters you will have in your report.  Ususally each objective lends itself to one or more chapters.  You can refer back to the objectives set.
 \subsection{Report Structure}
+
+\paragraph{Introduction}  Sets out the background and motivation for the project.  Summarises the work done, the results, the conclusions, and the recommendations for future work.  It is a one chapter summary of the \emph{entire} project.
+
+\paragraph{Defining the problem}  Objective \ref{understand-problem} requires a precise definition of the problem you are solving.  Don't forget to reference good source material \citep{henning_schulzrinne} and \citep{talbot2013}.  See section \ref{proposed}.
+
+\paragraph{Possible Solutions} Discuss the possible solutions, compare the
+alternatives, and select the one to use for the  implementation.
+
 \subsection{List of Appendices}
+What Appendices you will include.  A copy of the TOR should be the first, followed by the Ethics form and the Risk Assessment.
+
+Others might include design documentation, code listings, tables of results (if too large to include in the main text).
 
 \section{Marking Scheme}
+The marking scheme sets out what criteria we are going to use for the project.
 
+\paragraph{Project Type} General Computing or Software Engineering projects
 
-\clearpage
-\section{Project Plan}~
+\paragraph{Project Report}  State which chapters constitute the \emph{Analysis}, the \emph{Synthesis}, and the \emph{Evaluation}.  This help me when marking to know when to stop reading one section and put a mark down for it.
+
+\paragraph{Product}  List the deliverables that make up the \emph{Product}.  Code, design, requirements specifications, test plans, etc.
+
+For the \emph{Fitness for Purpose} and \emph{Build Quality}  list the critera used to asses the product by
+
+\subparagraph{Fitness for Purpose}
+\begin{itemize}
+	\item meet requirements identified
+	\item other appropriate measures
+\end{itemize}
+
+\subparagraph{Build Quality}
+\begin{itemize}
+	\item Requirements specification and analysis
+	\item Design Specification
+	\item Code quality
+	\item Test plan and Results
+\end{itemize}
+
+\section{Project Plan\footnote{Tasks should refer back to objectives}}
 \noindent
 \rotatebox{90}{\input{Gantt}}
