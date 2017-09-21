@@ -1,7 +1,11 @@
-all: tor dissertation
+all: tor dissertation wordcount
 
 tor:
-	latexmk -pdf -latexoption=-shell-escape TermsOfReference
+	latexmk -pdf -quiet -latexoption=-shell-escape TermsOfReference
 
 dissertation:
-	latexmk -pdf -latexoption=-shell-escape Dissertation
+	latexmk -pdf -quiet -latexoption=-shell-escape Dissertation
+
+wordcount:
+	texcount -total -inc TermsOfReference.tex
+	texcount -total -inc Dissertation.tex

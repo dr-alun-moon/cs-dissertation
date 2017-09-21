@@ -16,26 +16,16 @@
 \usepackage[a4paper,vscale=0.85]{geometry}
 \usepackage{doc}
 
-\title{Project Terms of Reference -- A project example}
-\author{Alun Moon}
-
+\includeonly{titlepage}
 \begin{document}
 \frontmatter
-\begin{titlepage}
-    Thesis
-\end{titlepage}
-
-\newpage
-Dedication
-
-\newpage
-Declaration
-
+\include{titlepage}
+\include{declaration}
+\include{acknowledgements}
+\include{abstract}
 \tableofcontents
-
 \mainmatter
-\chapter{Introduction}
-\include{intro}
+\include{introduction}
 \part{Analysis}
 
 \part{Synthesis}
@@ -50,7 +40,7 @@ Declaration
 \appendix
 
 \chapter{Terms of Reference}
-\input{tor}
+\input{tor} %<- note use of \input{} not \include{}
 
 \section{Ethics Form}
 If you scan the Ethics form on one of the multifunction printers, you can get a pdf copy.  This can then be included with the \LaTeX\ command

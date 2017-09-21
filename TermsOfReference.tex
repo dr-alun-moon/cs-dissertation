@@ -15,10 +15,13 @@
 \usepackage[numbib,section]{tocbibind}
 \usepackage[a4paper,vscale=0.85]{geometry}
 \usepackage{doc}
+\usepackage{pdfpages}
 
 \title{Project Terms of Reference -- A project example}
 \author{Alun Moon}
 
+\includepdfset{pagecommand={}}
+\includepdfset{width=\textwidth}
 \begin{document}
 \maketitle
 
@@ -30,14 +33,15 @@
 \section{Ethics Form}
 If you scan the Ethics form on one of the multifunction printers, you can get a pdf copy.  This can then be included with the \LaTeX\ command
 \begin{tcblisting}{listing only}
-\includegraphics{ethics.pdf}
+\includepdf[pages=1-3]{ethics.pdf}
 \end{tcblisting}
 Assuming of course you have saved the form  as \path{ethics.pdf}
+\includepdf[pages=1-3]{ethics.pdf}
 
 \section{Risk Assessment Form}
 Likewise you can scan and include the Risk Assessment Form
 \begin{tcblisting}{listing only}
-\includegraphics{risk-assesment.pdf}
+\includepdf[pages=1-3]{risk-assesment.pdf}
 \end{tcblisting}
 
 \end{document}
