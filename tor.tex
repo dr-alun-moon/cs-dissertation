@@ -1,7 +1,7 @@
 %!TeX root=TermsOfReference.tex
 
 \section{Background}
-This document demonstates the structure of a proposed Terms of Reference document written in \LaTeX.
+This document demonstrates the structure of a proposed Terms of Reference document written in \LaTeX.
 
 This should describe the ``context'' of the proposed project and answer the question, ``Why this project?'', both from your own perspective as a student undertaking a final year computing project, and that of any client.  It should show what makes this proposal a worthwhile computing final year project.  \emph{It must make clear both the application area or area of investigation and the computing aspects of your work}.
 
@@ -14,7 +14,7 @@ You can have one or more \path{.bib} files, these are  easy to populate from aca
 
 
 \begin{figure}
-\begin{tcolorbox}{}
+\begin{tcolorbox}
 \begin{minted}{bibtex}
 @book{k+r,
 	Author = {Brian Kerngihan and Denis Ritche},
@@ -35,7 +35,7 @@ Where you want the bibliography to go use the \mintinline{tex}{\bibliography{c,u
 \label{proposed}
 .  The project must exhibit a level of difficulty appropriate to final year honours BSc work, and be of a size that can be attempted in the time available; this section should define the topic and project work in enough detail for the markers to be sure that it is suitable. The more detail and discussion you produce at this stage, the stronger the foundation for the actual project work.
 
-You should emphasise the computing aspects you expect to be involved in, including those specifically relevant to your programme.  Remember that you are undertaking the project as part of a BSc programme in a computing-related discipline, and avoid being side-tracked into areas that are not relevant to your course.)
+You should emphasise the computing aspects you expect to be involved in, including those specifically relevant to your programme.  Remember that you are undertaking the project as part of a BSc programme in a computing-related discipline, and avoid being side-tracked into areas that are not relevant to your course.
 
 \section{Aims and Objectives}
 There should only be one or two aims
@@ -47,8 +47,8 @@ There should only be one or two aims
 \subsection{Objectives}
 Your objective list is a series of measurable objectives, can you tick each one off as \emph{done}?  I usually expect between 8 and 12 objectives
 
-The \textbf{enumerate} environment is useful here for generating a numbered list.   You can put \mintinline{tex}{\label} commands in with a keyword \mintinline{tex}{\label{understand-problem}} and then refer to the label with a \mintinline{tex}{\ref{understand-problem}} command, it puts the number of the objective in the text
-\begin{tcblisting}{}
+The \textbf{enumerate} environment is useful here for generating a numbered list.   You can put \mintinline{tex}{\label{}} commands in with a keyword \mintinline{tex}{\label{understand-problem}} and then refer to the label with a \mintinline{tex}{\ref{understand-problem}} command, it puts the number of the objective in the text
+\begin{tcblisting}{ }
 	See objective \ref{understand-problem}
 \end{tcblisting}
 \begin{enumerate}
@@ -76,7 +76,7 @@ For Hardware this is more critical, as we need to identify any hardware we have,
 In the case of software, there isn't usually an issue, unless you're needing huge amounts of run-time (we don't have a super-computer handy).
 
 \section{Structure and Contents of the Report}
-Here you set out the likely chapters you will have in your report.  Ususally each objective lends itself to one or more chapters.  You can refer back to the objectives set.
+Here you set out the likely chapters you will have in your report.  Usually each objective lends itself to one or more chapters.  You can refer back to the objectives set.
 \subsection{Report Structure}
 
 \paragraph{Introduction}  Sets out the background and motivation for the project.  Summarises the work done, the results, the conclusions, and the recommendations for future work.  It is a one chapter summary of the \emph{entire} project.
@@ -116,6 +116,7 @@ For the \emph{Fitness for Purpose} and \emph{Build Quality}  list the critera us
 	\item Test plan and Results
 \end{itemize}
 
-\section{Project Plan\footnote{Tasks should refer back to objectives}}
+\clearpage
+\section{Project Plan}
 \noindent
 \rotatebox{90}{\input{Gantt}}
