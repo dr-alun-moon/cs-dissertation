@@ -1,0 +1,110 @@
+%!TeX root=Dissertation.tex
+
+\chapter{Tools}
+
+\section{\LaTeX}
+I recommend the \TeX live distribution, which can be downloaded from
+\url{https://www.tug.org/texlive/}.  There are installation packages for Windows, Linux, and Macs here.  For Linux machines there is often a copy of texlive in the package repository.
+
+\begin{figure}
+\begin{minted}{bash}
+apt search texlive
+\end{minted}
+    \caption{Searching for texlive on Debian/Ubuntu systems}
+    \label{}
+\end{figure}
+
+\section{Editors}
+Any text editor will do.   I wrote my MSc dissertation in \texttt{vi}\footnote{\url{https://en.wikipedia.org/wiki/Vi}}
+\footnote{Hardcore Unix use}!
+
+In practice, many modern editors have a rich set of tools to help with the editing process.  From syntax-highlighting, auto-completion, to rebuilding.
+
+\section{Atom}
+The Atom editor is my current editor of choice\footnote{Having used emacs since the late 1980s for latex}.  As it is a very extensible editor, there are a number of add-ons that help with latex.  I currently have:
+
+\begin{description}
+    \item[language-latex] \url{https://atom.io/packages/language-latex} which provides syntax highlighting.
+    \item[latex] \url{https://atom.io/packages/latex} which provides means of compiling latex documents from within the editor.
+    \item[pdf-view] \url{https://atom.io/packages/pdf-view} which is a PDF viewer.  (I'm not sure about this one, I can't tell if it is too much of a strain on the editor)
+\end{description}
+
+\section{PDF viewers}
+Latex generates pdf files out of the box.  There are some good PDF viewers about.  The ones below integrate nicely with the Atom latex tools.
+\subsection{Skim -- OSX}
+The viewer for Macs \url{http://skim-app.sourceforge.net/}.
+\subsection{Sumatra PDF -- Windows}
+A good viewer for Windows based machines\\ \url{https://www.sumatrapdfreader.org/free-pdf-reader.html}.
+
+\paragraph{A note about Adobe Acrobat on  Windows machines.}
+On windows machines Acrobat locks the file when it opens it, this means that pdflatex and tools cannot write to the file to rebuild it.
+
+\section{SyncTeX integration}
+In the settings for the latex plugin for Atom, and the various PDF viewers, you'll see settings for something called SyncTeX.  This does two useful things.
+
+\emph{Firstly} it allows the editor to move the document to the position the cursor is at in the text.  In Skim and Sumatra the viewer displays a coloured dot corresponding to the position of the cursor.
+
+\emph{Second and more useful} is allows the PDF viewer to control the cursor position int he editor.  Click on a location in the PDF, and the cursor in the editor is moved to the corresponding file and location in the sources.
+
+\section{GitHub}
+\emph{Treat the documents as code.}
+Put the ToR and Dissertation under version control.  It also makes moving your work between university and home easy.  Just commit all the changes, push the repository back to the server, then pull the repository at the other end.  It also means you have a copy backed up.
+
+\paragraph{Sign up for the Student Developer Pack} See \url{https://education.github.com/} and \url{https://education.github.com/pack/}.  They will give you unlimited private repositories (normally \$7/month) while you are a student.
+
+\section{Perl}\label{perl}
+Some of the \emph{very} useful tools in texlive, need a Perl installation to work.   In Linux and Macs, perl should be there automatically.  For windows although texlive does install a minimal Perl set, it isn't enough for the really usefull tools (see \ref{latexmk} and \ref{texcount}).
+
+\paragraph{On Windows machines install Perl before TeXlive.}
+Make sure that the \path{Perl.exe} is in the system PATH before installing TeXlive.   My Windows installation of Perl is Strawberry Perl \url{http://strawberryperl.com/}.
+
+
+\section{TeXlive utilities}
+There are a couple of very utilities that come with TeXlive, they do need a complete Perl installation (see \ref{perl}).
+
+\subsection{latexmk}\label{latexmk}
+Latex needs several passes through to collate and use cross references.  It also needs a pass by BibTeX to compile the reference list, and latex passes to put the citations in.
+
+\texttt{latexmk} is a make like program that understands latex, it can parse the log files generated and re-run the appropriate tools until a build is complete.
+\begin{tcblisting}{listing only, listing options={language=bash}}
+    latexmk -pdf TermsOfReference
+\end{tcblisting}
+
+\subsection{texcount}\label{texcount}
+\texttt{texcount} parses the docment, following any inputed or included files, and counts the words used.  Being TeX aware it knows how to ignore the markup.
+\begin{tcblisting}{listing only, listing options={language=bash}}
+    texcount -total -inc Dissertation.tex
+\end{tcblisting}
+
+\subsection{texdoc}
+Latex is \emph{very} well documented.  To find the documentation for a package, which are loaded in the preamble.  Use \texttt{texdoc} with the package name.
+\begin{tcblisting}{listing only,listing options={language=bash}}
+    texdoc minted
+    texdoc tcolorbox
+    texdoc tikz
+\end{tcblisting}
+
+\section{Listings}
+There are several packages that layout code listings, complete with syntax highlighting.  Their advantage is that they can read in and highlight a source-file in the appropriate language.
+
+
+\subsection{minted}
+I use the \texttt{minted} package,  it does require the use of an external program.  You will need to have Pygments \url{http://pygments.org/} installed, which depends on having a Python installation \url{https://www.python.org/}.
+
+\begin{tcblisting}{}
+\inputminted{c}{hello.c}
+\end{tcblisting}
+
+In running latex you'll need to enable shell-escape.
+\begin{tcblisting}{listing only}
+pdflatex -shell-escape Dissertation
+latexmk -latexoptions=-shell-escape Dissertation
+\end{tcblisting}
+Or see the settings for the latex Atom package
+
+\subsection{listings}
+Listings is an older package.  It doesn't produce coloured output, but it is written in tex, so it has no external dependencies.
+\begin{tcblisting}{}
+\lstset{language=c}
+\lstinputlisting{hello.c}
+\end{tcblisting}

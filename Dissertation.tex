@@ -1,4 +1,4 @@
-\documentclass[12pt]{book}
+\documentclass[11pt]{book}
 \usepackage[british]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -10,25 +10,30 @@
 \usepackage{pdfpages}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage[minted]{tcolorbox}
+\usepackage[listingsutf8,minted]{tcolorbox}
 \usepackage{hyperref}
 \usepackage[chapter]{tocbibind}
 \usepackage[a4paper,vscale=0.85]{geometry}
 \usepackage{doc}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{listingsutf8}
 
 \begin{document}
+
 \frontmatter
 \include{titlepage}
 \include{declaration}
 \include{acknowledgements}
 \include{abstract}
 \tableofcontents
+
 \mainmatter
 \include{introduction}
 \part{Analysis}
-
+\include{tools}
 \part{Synthesis}
-
+\include{texnical}
 \part{Evaluation}
 
 

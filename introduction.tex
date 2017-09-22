@@ -1,3 +1,29 @@
 %!TeX root=Dissertation.tex
 
 \chapter{Introduction}
+This document is split into several files.  This makes the editing easier, if the file management a little harder.
+
+The two principle means of including sub parts into a main document are the \LaTeX\ commands \verb"\input" and \verb"\include"
+\section{Splitting the Input}
+\paragraph{The input command } simply reads that file in, at that point in the main file.  The result is as if the inputed file was pasted in at the point of the command.
+
+\paragraph{The include command} is a little more complex.  The main point to note is that it forces a new page, then reads in the file.  It is good foe content that needs to start a fresh page, such as chapters.  As a rule of thumb I put each chapter in an included file.
+
+\subsection{Some tricks.}  The Dissertation uses the book class, that gives the Chapter as the top sectional element, followed by section, subsection, paragraph.   The Terms-of-reference uses the article class, which starts at the section level.
+
+By writing the ToR as a driver document that handles all the setting up, and then inputing the tor content from a separate file.  When it comes to including the tor as an appendix in the dissertation, you can start a chapter then just input the tor content file.
+
+\begin{tcblisting}{listing only}
+    \appendix
+    \chapter{Terms of reference}
+    \input{tor}
+\end{tcblisting}
+
+\section{Magic comments}
+Since \LaTeX\ needs to have a certain amount of setup (known as the preamble), this is the file that needs to be build.  From a Makefile or command-line, this is simple enough.
+
+Several editors allow you to trigger the build from within their environment.  Here the file you are editing is a subpart and not the mater document that needs to be passed to \LaTeX.   The editor needs to know which \path{.tex} file is the master document.  Some editors recognise a magic comment placed at the top of a sub-file.
+\begin{tcblisting}{listing only}
+%!TeX root=Dissertation.tex
+\end{tcblisting}
+This informs the editor that \path{Dissertation.tex} is the file to build to rebuild the document.  I can save changes and just press the key combination set to trigger a \LaTeX\ build, and the editor knows how to do the rest.
