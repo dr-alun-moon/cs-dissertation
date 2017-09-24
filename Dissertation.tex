@@ -1,4 +1,4 @@
-\documentclass[11pt]{book}
+\documentclass[12pt,twoside]{book}
 \usepackage[british]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -13,11 +13,12 @@
 \usepackage[listingsutf8,minted]{tcolorbox}
 \usepackage{hyperref}
 \usepackage[chapter]{tocbibind}
-\usepackage[a4paper,vscale=0.85]{geometry}
+\usepackage[a4paper,vscale=0.8]{geometry}
 \usepackage{doc}
 \usepackage{minted}
 \usepackage{listings}
 \usepackage{listingsutf8}
+\usepackage[colorinlistoftodos]{todonotes}
 
 \begin{document}
 
@@ -31,9 +32,12 @@
 \mainmatter
 \include{introduction}
 \part{Analysis}
+\include{literature}
 \include{tools}
+
 \part{Synthesis}
 \include{texnical}
+
 \part{Evaluation}
 
 

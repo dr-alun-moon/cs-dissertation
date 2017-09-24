@@ -6,17 +6,17 @@
 The Gantt chart in the Terms-of-Reference is drawn with another latex package.
 It uses an \texttt{input} command to pull it into the tor (and dissertation).
 
-Most of the file \path{Gantt.tex} is the setup of the Gant chart, in order to make it fit in one page.
-
+Most of the file \path{Gantt.tex} is the setup of the Gant chart, in order to make it fit in one page.  The bottom section is where you can define the tasks.
+Each bar has a title, a start date, and an end date.  Milestones have a title and a date.  The \texttt{ms} option can be set to left or right to control which side of the milestone mark the text label.
 
 \begin{tcblisting}{listing only}
-% % --Tasks go here
-% % put in a title, a start date, end date...
-% \ganttbar{TOR}{11/9/17}{13/10/17}
-% \ganttbar[inline]{\emph{revise}}{15/10/17}{10/11/17}\\
-% \ganttbar{Analysis}{18/9/17}{24/11/17}\\
-% \ganttbar{Design}{31/10/17}{17/1/18}
-% \ganttmilestone[ms=right]{Build complete (Obj \ref{write-code})}{18/1/18}\\
-% \ganttbar{Exploration}{22/9/17}{15/11/17}
+% --Tasks go here
+% put in a title, a start date, end date...
+ \ganttbar{TOR}{11/9/17}{13/10/17}
+ \ganttbar[inline]{\emph{revise}}{15/10/17}{10/11/17}\\
+ \ganttbar{Analysis}{18/9/17}{24/11/17}\\
+ \ganttbar{Design}{31/10/17}{17/1/18}
+ \ganttmilestone[ms=right]{Build complete (Obj \ref{write-code})}{18/1/18}\\
+ \ganttbar{Exploration}{22/9/17}{15/11/17}
 %
 \end{tcblisting}
