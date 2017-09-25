@@ -6,7 +6,7 @@
 I recommend the \TeX live distribution, which can be downloaded from
 \url{https://www.tug.org/texlive/}.  There are installation packages for Windows, Linux, and Macs here.  For Linux machines there is often a copy of texlive in the package repository.
 
-\begin{figure}
+\begin{figure}[h]
 \begin{minted}{bash}
 apt search texlive
 \end{minted}
@@ -20,7 +20,7 @@ Any text editor will do.   I wrote my MSc dissertation in \texttt{vi}\footnote{\
 
 In practice, many modern editors have a rich set of tools to help with the editing process.  From syntax-highlighting, auto-completion, to rebuilding.
 
-\section{Atom}
+\subsection{Atom}
 The Atom editor is my current editor of choice\footnote{Having used emacs since the late 1980s for latex}.  As it is a very extensible editor, there are a number of add-ons that help with latex.  I currently have:
 
 \begin{description}
@@ -28,6 +28,21 @@ The Atom editor is my current editor of choice\footnote{Having used emacs since 
     \item[latex] \url{https://atom.io/packages/latex} which provides means of compiling latex documents from within the editor.
     \item[pdf-view] \url{https://atom.io/packages/pdf-view} which is a PDF viewer.  (I'm not sure about this one, I can't tell if it is too much of a strain on the editor)
 \end{description}
+
+\subsection{TeXworks and TeXShop}
+The TeXShop editor on the Mac inspired TeXworks on Windows.  This is a nice little editor with a good pdf previewer built in.
+
+\subsection{Texmaker}
+    This looks like a nice clean editor for LaTeX.  It has  usefull pallets of commands.
+\subsection{TeXnicCenter}
+    An editor with a lot of tools.
+    A  capable system.
+\subsection{Online}
+Two online web based editing web-applications are
+\begin{itemize}
+  \item ShareLaTeX \url{https://www.sharelatex.com/}
+  \item Overleaf  \url{https://www.overleaf.com/}
+\end{itemize}
 
 \section{PDF viewers}
 Latex generates pdf files out of the box.  There are some good PDF viewers about.  The ones below integrate nicely with the Atom latex tools.

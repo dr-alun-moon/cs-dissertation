@@ -1,3 +1,28 @@
 %!TeX root=Dissertation.tex
 
 \chapter{Some Literature}
+
+Dario Taraborelli, has written a nice page illustrating some of \href{http://nitens.org/taraborelli/latex}{The Beauty of LaTeX} illustrating some of the finer points of TeX et.al. typesetting
+
+\url{TeXample.net} is a site that has many spectacular examples\footnote{\url{http://www.texample.net/tikz/examples/}} of graphics creation in LaTeX. It mainly illustrates the use of the tikz package.
+
+Two web sites provide forums for questions and answers on latex. \href{http://www.latex-community.org/}{LaTeX Community} and \href{http://tex.stackexchange.com/}{TeX - LaTeX Stack Exchange}
+
+\section{References and searching}
+
+\LaTeX\ and \BibTeX\ provide excellent support for referencing and citations (especially with natbib\footnote{see online manual at \url{http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/natbib/natbib.pdf} or with the command \texttt{texdoc natbib}}).  Getting your .bib file populated with material can be time consuming. Among the many ways of doing this are:
+\begin{itemize}
+\item    Search engines like the University Library allow you to export your saved searched in a bibTeX file
+\item    Google scholar https://scholar.google.co.uk/ have an option to create the BibTeX entry for results.
+\item    Zotero provides a plugin for Firefox, that extracts information from a web page and exports a bibTeX file. (Great for getting references to Wikipedia, or getting book details from Amazon)
+\end{itemize}
+
+These are great, but sometimes the bibTeX file needs a little post-editing. Usually I end up deleting extraneous fields and escaping TeX characters if needed.
+
+\begin{enumerate}
+\item Search for articles, books etc, grab the bibTeX file,
+\item \verb"\backslash cite{}"and use
+\item \verb"\bibliography{save1,litrev,canon}" with
+\item \verb"\bibliographystyle{plainnat}" (having \verb"\usepackage{natbib}" in the preamble)...
+\end{enumerate}
+ Harvard referencing of your material... job done
