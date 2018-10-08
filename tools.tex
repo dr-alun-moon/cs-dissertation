@@ -13,15 +13,46 @@ apt search texlive
     \caption{Searching for texlive on Debian/Ubuntu systems}
     \label{}
 \end{figure}
-
+\emph{Edit 2018\/} on my machine at work I've dropped the Ubuntu version of
+texlive as it didn't pull in all the documentation for the packages (see section
+\ref{tex:texdoc})
 \section{Editors}
 Any text editor will do.   I wrote my MSc dissertation in \texttt{vi}\footnote{\url{https://en.wikipedia.org/wiki/Vi}}
-\footnote{Hardcore Unix use}!
+\footnote{Hardcore Unix use}!  I've gone full circle and returned to using
+\texttt{vi} for latex at work and at home.
 
 In practice, many modern editors have a rich set of tools to help with the editing process.  From syntax-highlighting, auto-completion, to rebuilding.
 
+\subsection{My setup}
+Currently I'm using \texttt{vim} to edit this document, and \texttt{latexmk} to
+build  the pdf.   I've two terminals open, in one I have the editor and the
+other the command
+\begin{minted}{bash}
+letexmk -pdf -pvc -latexoption=-shell-escape Dissertation
+\end{minted}
+
+The options are
+\begin{description}
+	\item[\texttt{-pdf}] makes sure a pdf is generated via \texttt{pdflatex}
+	\item[\texttt{-pvc}] monitors the \texttt{.tex} files and reruns the build
+		process if changes are made, it automatically opens and updates the pdf
+		viewer as needed.
+	\item[\texttt{-latexoption=-shell-escape}] because I'm using the
+		\texttt{minted} package for syntax highlighting, the
+		\texttt{-shell-escape} option is passed on to \texttt{pdflatex}.  Minted
+		uses pygmentize as an external program to perform the highlighting.
+\end{description}
+		
+\subsection{Vi/Vim+vimtex}
+Vim \url{https://www.vim.org/} the modern incaration of \texttt{vi} has an
+extension package \texttt{vimtex} \url{https://github.com/lervag/vimtex}.
+I'm finding these more than adequate for my editing needs.  Vi is part of the
+POSIX standard and is either going to be installed or very easy to install on
+any Unix like system. Windows users have several choises on how to use vim and
+latex.
+
 \subsection{Atom}
-The Atom editor is my current editor of choice\footnote{Having used emacs since the late 1980s for latex}.  As it is a very extensible editor, there are a number of add-ons that help with latex.  I currently have:
+As it is a very extensible editor, there are a number of add-ons that help with latex.
 
 \begin{description}
     \item[language-latex] \url{https://atom.io/packages/language-latex} which provides syntax highlighting.
@@ -91,7 +122,7 @@ Latex needs several passes through to collate and use cross references.  It also
     texcount -total -inc Dissertation.tex
 \end{tcblisting}
 
-\subsection{texdoc}
+\subsection{texdoc}\label{tex:texdoc}
 Latex is \emph{very} well documented.  To find the documentation for a package, which are loaded in the preamble.  Use \texttt{texdoc} with the package name.
 \begin{tcblisting}{listing only,listing options={language=bash}}
     texdoc minted
