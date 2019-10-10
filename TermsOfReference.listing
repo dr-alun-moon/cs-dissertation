@@ -1,1 +1,1 @@
-\includegraphics{risk-assesment.pdf}
+\includepdf[pages=1-3]{risk-assesment.pdf}
