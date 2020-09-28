@@ -2,12 +2,52 @@
 
 \chapter{Some TeXnical Details}
 
-\section{The Gantt Chart}
+\section{Structure of the file set}
+The Terms of Reference and Dissertation are split into several files, to ease
+editing, and exploit some of \LaTeX's capabilities.
+The structure is relatively \emph{flat} with little hierarchy of directories,
+directories and sub-directories can be added to simplify some of the structure
+as the project grows.
+
+The principle files are:
+
+\paragraph{\texttt{Makefile}} I use \texttt{make} still as my build driver.
+Any automated build system can work with \LaTeX\ files, it just needs to know
+that PDFs are build from \texttt{.tex} files.
+
+\paragraph{\texttt{TermsOfReference.tex}} This is the main file for creating
+the \emph{Terms of Reference}.  It pulls in the \texttt{tor.tex} file, the
+Gantt chart from \texttt{gantt.tex}, and the ethics and risk assessment forms
+from scanned PDFs.  The document is typeset as an \texttt{article}.
+
+\paragraph{\texttt{Dissertation.tex}} Is the main file for creating the
+dissertation.   This pulls in a number of other files as required.	
+It is typeset as a \texttt{book}.  The sectioning starts as \verb'\chapter'
+and has \verb'\section'  within.  This way the terms of reference can be
+included as a chapter in the appendix.
+The chapters are each included using \verb'\include',  this allows the
+chapters to be written as separate files.  The difference between
+\verb'\include' and \verb'\input' is that \verb'\include' forces a new
+right-hand page to start (good for starting chapters).
+
+\subsection{Subsidiary files}
+\paragraph{\texttt{tor.tex}} This file is the main \emph{Terms-of-Reference}
+file.  By using \verb'\input' in the  \texttt{TermsOfReference.tex} document,
+this gets included and typeset.  
+
+\paragraph{\texttt{gantt.tex}} The Gantt chart is a little complex, so gets
+put into a separate file, see section \ref{gantt-chart}.
+
+\subsection{The Gantt Chart}\label{gantt-chart}
 The Gantt chart in the Terms-of-Reference is drawn with another latex package.
 It uses an \texttt{input} command to pull it into the tor (and dissertation).
 
-Most of the file \path{Gantt.tex} is the setup of the Gant chart, in order to make it fit in one page.  The bottom section is where you can define the tasks.
-Each bar has a title, a start date, and an end date.  Milestones have a title and a date.  The \texttt{ms} option can be set to left or right to control which side of the milestone mark the text label.
+Most of the file \path{Gantt.tex} is the setup of the Gant chart, in order to
+make it fit in one page.  The bottom section is where you can define the
+tasks.
+Each bar has a title, a start date, and an end date.  Milestones have a title
+and a date.  The \texttt{ms} option can be set to left or right to control
+which side of the milestone mark the text label.
 
 \begin{tcblisting}{listing only}
 % --Tasks go here

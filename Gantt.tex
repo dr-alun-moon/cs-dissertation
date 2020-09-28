@@ -23,34 +23,33 @@ milestone right shift=1,
 ms/.style={inline,
     milestone inline label node/.append style={#1=0pt}}
 ]%
-{23/9/19}{29/05/20} %<- Dates Gantt Chart runs from and to
 % For semester dates see
 % https://www.northumbria.ac.uk/about-us/university-services/academic-registry/registry-records-and-returns/academic-calendars/
+{21/9/20}{28/05/21} %<- Dates Gantt Chart runs from and to
 
 \gantttitlecalendar{year,month,week=1}\\
 
 % Highlight Smesters and Vactions
-\ganttgroup[region=blue!10]{Sem 1}{23/9/19}{20/12/19}
-\ganttgroup[region=red!50]{Christmas}{23/12/19}{10/1/20}
-\ganttgroup[region=blue!10]{Sem 1}{13/1/20}{17/1/20}
-\ganttgroup[region=blue!50]{Sem 2}{20/1/20}{27/3/20}
-\ganttgroup[region=green!25]{Easter}{30/3/20}{17/4/20}
-\ganttgroup[region=blue!50]{Sem 2}{20/04/20}{29/5/20}\\
+\ganttgroup[region=blue!20]{Semester 1}{21/9/20}{22/1/21}
+\ganttgroup[region=blue!50]{Semester 2}{18/1/21}{28/5/21}\\
+\ganttgroup[region=red!50]{Christmas}{21/12/20}{8/1/21}
+\ganttgroup[region=green!25]{Easter}{29/3/21}{16/4/21}\\
 
 % Project Deadlines (from the Project Handbook)
-\ganttmilestone[ms=left]{PID}{14/10/19}
-\ganttmilestone[ms=left]{final \bfseries TOR}{22/11/19}
-\ganttmilestone[ms=right]{Draft Analysis}{6/12/19}
-\ganttmilestone[ms=left,milestone/.append style={fill=red}]{\bfseries Submit}{30/4/20}
+\ganttmilestone[ms=left]{PID}{12/10/20}
+\ganttmilestone[ms=left]{final \bfseries TOR}{16/11/20}
+\ganttmilestone[ms=right]{Draft Analysis}{30/11/20}
+\ganttmilestone[ms=left,milestone/.append style={fill=red}]{\bfseries Submit}{29/4/21}
 \ganttnewline[thick]
 
 % --Tasks go here
 % put in a title, a start date, end date...
-\ganttbar{TOR}{23/9/19}{28/10/19}
-\ganttbar[inline]{\emph{revise}}{28/10/19}{22/11/19}\\
-\ganttbar{Analysis}{30/9/19}{24/11/19}\\
-\ganttbar{Design}{31/10/19}{19/1/20}
+\ganttbar{TOR}{28/9/20}{26/10/20}
+\ganttbar[inline]{\emph{revise}}{28/10/20}{16/11/20}\\
+\ganttbar{Analysis}{30/9/20}{24/11/20}\\
+\ganttbar{Design}{31/10/20}{19/1/21}
 % Note how you can refer to labels set in the objectives list!
 \ganttmilestone[ms=right]{Build complete (Obj \ref{write-code})}{18/1/20}\\
 \ganttbar{Exploration}{22/10/19}{15/1/20}
 \end{ganttchart}
+
