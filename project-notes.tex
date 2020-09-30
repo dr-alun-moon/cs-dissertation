@@ -1,0 +1,257 @@
+\documentclass{tufte-handout}
+
+\title{--- Projects Notes ---}
+\author{Dr Alun Moon}
+\date{September 2020}
+
+\usepackage{hyperref, fontawesome}
+
+\begin{document}
+
+\maketitle
+
+\section{Notes for Project Students}
+
+The most valuable document is the \emph{Project Handbook}, this gives guidance
+on the structure and contents of the Terms-of-Reference and Dissertation.  It
+also has the marking scheme, which is an important read as this describes what
+we are looking for when marking the project.
+
+\subsection{The Logbook}
+Use your logbook and a project diary, make notes of what you do as you do
+them.  As questions arise, make a note of them at the time, and then you are
+ready for the weekly meeting.
+
+In the meeting make notes of whet we discuss for the week ahead, and issues
+that come up that can be looked at later.
+
+Some students in the past have kept a project blog.
+
+\subsection{The Dissertation} 
+There are several good sites about with advice on how to write clearly.  Not
+all of the advice is directly relevant to writing a B.Sc dissertation in
+Computer Science.  The advice may not even be consistent, 
+
+\begin{itemize}
+	\item[William Stallings How-To]
+		\url{http://www.computersciencestudent.com/}
+		A good site with good material especially the How-To on \emph{Some
+		Advice on Writing a Technical Report}
+		\url{https://www.csee.umbc.edu/~sherman/Courses/documents/TR_how_to.html}
+
+	\item[Carnegie Mellon: Advice on Research and Writing]
+		\url{http://www.cs.cmu.edu/afs/cs.cmu.edu/user/mleone/web/how-to.html}
+		A collection of advice for computer science students
+
+	\item[Writing Technical Articles]
+		\url{http://www.cs.columbia.edu/~hgs/etc/writing-style.html}
+		Another guide aimed at computer science students
+
+\end{itemize}
+
+Once you're clear about the advice in your project handbook, you may find the
+following helpful for parts of your dissertation.  Remember that much of the
+advice below is written for academics intending to submit a journal or
+conference paper.  You'll need to interpret it carefully to make it fit the
+requirements of a dissertation.
+
+\paragraph{Abstract }
+
+See \emph{How to Write an Abstract}
+\url{http://users.ece.cmu.edu/~koopman/essays/abstract.html}
+
+%\paragraph{Main body of the report}
+
+\paragraph{How to organize your
+thesis}(\url{http://www.sce.carleton.ca/faculty/chinneck/thesis.html}):
+intended mainly for Ph.D. dissertations - but if you disregard the references
+to the need to demonstrate an original contribution to knowledge, this works
+for B.Sc. dissertations too.
+
+\paragraph{How to write a great research
+paper}(\url{https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/}):
+you can guess this is advice about writing a paper, not a dissertation - but
+if you ignore the advice about length of each section, almost everything else
+applies to writing a dissertation as well.
+
+%For the \emph{literature review} you need to have a plan [How to read a
+%research paper](papers/how_to_read_a_research_paper.pdf) is an excellent guide
+%to forming a plan for reading a paper. Follow its advice.
+
+\paragraph{ Bibliography, references, citations}
+Cite them right
+	is essential reading.
+
+For managing the references use BibTeX (I assume you are using LaTeX for
+writing the ToR and Disseritation).  See \emph{Managing Citations and Your
+Bibliography with BibTeX} (\url{http://www.tug.org/pracjourn/2006-4/fenn/})
+(\faFilePdfO~\url{http://www.tug.org/pracjourn/2006-4/fenn/fenn.pdf})
+) and the Wikibook entry on \emph{LaTeX/Bibliography Management}
+(\url{https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management}).
+
+I'd recommend using the `natbib` package (pdf manual
+\url{http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/natbib/natbib.pdf})
+as it will do the work of formatting Harvard references for you.  It should be
+part of a standard latex installation.
+
+ If you use Google Scholar for
+ searching, you can save the results in BibTeX ready format, just copy into
+ your file of references.
+
+\subsection{Style}
+The \emph{Guardian style guide}(\url{https://www.theguardian.com/guardian-observer-style-guide-a})  
+is a good guide to modern British English.  Guides by  
+\emph{Henning Schulzrine}(\url{http://www.cs.columbia.edu/~hgs/etc/writing-bugs.html})
+ and
+\emph{John Owens}(\url{http://www.ece.ucdavis.edu/~jowens/commonerrors.html})
+ have more specific advice about technical writing style.
+
+If you want a good guide to preparing  electronic documents \emph{Effective
+scientific electronic
+publishing}(\url{https://www.cl.cam.ac.uk/~mgk25/publ-tips/}) is a good guide
+with LaTeX specific advice.
+
+\section{Latex}
+
+I have a Github repository (\url{https://github.com/dr-alun-moon/cs-dissertation})
+ with a skeleton for the terms of reference and the
+dissertation, feel free to fork and clone
+
+LaTeX is a freely available typesetting system.  It is in my opinion just about 
+ the best system there is for preparing documents.
+
+LaTeX is well documented:
+\begin{itemize}
+\item \emph{The Not so short introduction to LaTeX}(\url{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf})
+  Is a good comprehensive guide for beginners.
+\item There's a useful LaTeX \emph{Wikibook}(\url{https://en.wikibooks.org/wiki/LaTeX}) that is worth a look.
+\item Dr Nicola Talbot has written a couple of good guides
+	\emph{LaTeX for Complete Novices}(\url{https://www.dickimaw-books.com/latex/novices/})
+	and 
+	\emph{Using LaTeX to Write a PhD Thesis}(\url{https://www.dickimaw-books.com/latex/thesis/})
+	while written for PhD students, most of it is applicable to BSc
+dissertations.
+\end{itemize}
+
+Dario Taraborelli, has written a nice page illustrating some of
+ \emph{The Beauty of LaTeX}(\url{http://nitens.org/taraborelli/latex}) illustrating some
+ of the finer points of typesetting with TeX et.al. 
+
+ \emph{TeXample} \url{http://www.texample.net/} is a site that has many spectacular
+Alan T. Sherman
+ examples of graphics creation in LaTeX.
+ It mainly illustrates the use of the
+ \url{http://mirror.ox.ac.uk/sites/ctan.org/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf} 
+ drawing package.
+
+Latex should be installed on the Linux machines in the CIS labs, if not it is
+easy to install.
+
+If you want to install it yourself I'd recommend the \emph{TeX Live} (\url{https://www.tug.org/texlive/})
+installation.  It requires patience, as it needs to download 4000 or so
+(small) files, that gives you a complete installation.  About 6GB on my Linux
+machines.  I also use the Windows version of TexLive on my windows machine, 
+
+It's hard to imagine why anyone would write a Computing or Engineering project
+dissertation using anything other than LaTeX.  Its key benefit is that it
+allows you to concentrate on the *content* of your writing rather than its
+*layout*.   Also, it handles automatically the production of lists of contents,
+tables and figures, and, using BibTeX, it makes it easy to produce a
+bibliography and to manage citations. 
+
+\section{Unix tools}
+I'm a \textsc{Unix} user, so I'm a little biased towards Unix like tools
+
+\texttt{Make}
+ Ok `make` is old and there are better newer build systems about.  
+ Using a build system for compiling and running code, running tests, plotting
+results, running latex, and so on makes a lot of sense.
+
+\texttt{latexmk}
+This  comes with the standard Texlive installation it will run latex, bibtex and tools to
+rebuild the document.  It can be set to monitor the files and rebuild the
+document if anything changes.
+The command
+\begin{quote}
+	\texttt{latexmk -pdf -pvc}
+\end{quote}
+will build the pdf, launch a pdf-viewer, and then monitor the files and
+rebuild and refresh the viewer as needed.
+
+\texttt{texcount}
+another tool in the  standard set it counts the words used, but is
+intelligent enough to not count things like the table-of-contents or
+bibliography.
+\begin{quote}
+	\texttt{texcount -total -inc TermsOfReference.tex: }
+\end{quote}
+
+\texttt{pygments}
+ \emph{Pygments} (\url{http://pygments.org/}) handles code formatting for many
+programming languages.   The
+\emph{minted} (\url{http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/minted/minted.pdf})
+latex package make use of this for typesetting listings.
+
+
+\subsection{My set-up}
+I use LaTeX routinely in place of both Word and Powerpoint.  I use the
+following setup:
+
+\newthought{text editor}
+I confess I still use `vi` (well vim actually)  but any editor will do.
+I have the \texttt{vimtex} \url{https://github.com/lervag/vimtex} plug-in that 
+does a good job of syntax highlighting, and running \texttt{latexmk} in the
+background. 
+
+\newthought{Some shell}
+One of the most useful commands in the standard install is \texttt{texdoc}.   
+Latex packages are typically very well documented, the \texttt{texdoc} command
+finds and displays documentation, typically a pdf.
+
+\newthought{SumatraPDF}
+Is the PDF viewer I use.  The problem with Adobe Acrobat is that it locks the
+PDF file and so it can't be overwritten when rerunning latex.
+
+
+\section{References and searching}
+LaTeX and BibTeX provide excellent support for referencing and citations
+ (especially with the
+ [natbib](http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/natbib/natbib.pdf) package).
+ Getting your .bib file populated with material can be time consuming if writing it by hand.
+ However since BibTeX has been around for many years there is good support among the 
+ Academic community, 
+
+ \begin{itemize}
+	 \item Google scholar \url{https://scholar.google.co.uk/}
+   have an option to create the BibTeX entry for results.
+\item \emph{Zotero} (\url{http://www.zotero.org/}) provides a plugin for web browsers,
+   that extracts information from a web page and exports a bibTeX file.  
+   (Great for getting references to Wikipedia, or getting book details from Amazon)
+   \end{itemize}
+
+These are great, but sometimes the bibTeX file needs a little post-editing.
+ Usually I end up deleting extraneous fields and escaping TeX characters if needed.
+
+\subsection{Using in practice}
+Search for articles, books etc, grab the bibTeX file, \verb`\cite{}` and use
+ \verb`\bibliography{save1,litrev,canon}` with \verb`\bibliographystyle{plainnat}`
+ (having \verb`\usepackage{natbib}` in the preamble)...   
+ Harvard referencing of your material... \emph{job done!}
+
+
+\section{Users of LaTeX}
+There is a large community of users of LaTeX out there, a random selection includes
+
+\begin{itemize}
+\item Imperial College, London
+\item School of Mathematics, Trinity College Dublin
+\item Department of Engineering, University of Cambridge
+\item Goddard Institute for Space Studies, NASA
+\end{itemize}
+
+\bibliographystyle{plain}
+\bibliography{projects}
+\nocite{*}
+
+\end{document}
+
